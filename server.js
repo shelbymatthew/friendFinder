@@ -9,6 +9,7 @@ require("./app/routing/htmlRoutes.js");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+var newFriend = undefined;
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,7 +49,10 @@ app.post("/api/new", function(req, res) {
   
     res.json(newFriend);
     newFriend = newFriend.scores.map(Number)
-    console.log(newFriend)
+    console.log("new" +newFriend)
+    checkFriend(newFriend);
+
+
 
   });
 
@@ -72,6 +76,8 @@ app.post("/api/new", function(req, res) {
 //   });
 
 
+var newAr = [];
+var addedAr = []
 var friends = [
     {
         name: "Jim",
@@ -90,6 +96,72 @@ var friends = [
     },
 
 ];
+
+//walks through the scoress answers ojects, runs them through the check scoress function
+// for (var j = 0; j < friends.length; j++) {
+//     // console.log(friends[j].scores)
+//     checkScores(newFriend, friends[j].scores)
+// }
+function checkFriend(input){
+     console.log("hiiiiit")
+    for (var j = 0; j < friends.length; j++) {
+        console.log("new log: " +friends[j].scores)
+        console.log("freis" + input)
+        checkScores(input, friends[j].scores)
+    }
+
+}
+
+
+
+
+//compares two arrays, and gets the total number of differences between each number in the arrays, pushes the totals to a new array.
+function checkScores(scores, friendlist){
+
+for(var i = 0; i < scores.length; i++){
+    
+    newAr.push(Math.abs(scores[i] - friendlist[i]));    
+}
+    console.log("1" +newAr)
+    var added = sum(newAr);
+    console.log("2" +added)
+    newAr = [];  
+    addedAr.push(added)
+    console.log("added" + addedAr)
+    var min = Math.min.apply(Math, addedAr)
+    console.log("4"+min)
+    var index = 0;
+var value = addedAr[0];
+for (var i = 1; i <  addedAr.length - 1; i++) {
+  if ( addedAr[i] < value) {
+    value =  addedAr[i];
+    index = i;
+  }
+}
+console.log("index: " + JSON.stringify(friends[index]))
+};
+
+var min = Math.min.apply(Math, addedAr)
+// console.log("4"+min)
+
+
+
+// var index = 0;
+// var value = addedAr[0];
+// for (var i = 1; i <  addedAr.length; i++) {
+//   if ( addedAr[i] < value) {
+//     value =  addedAr[i];
+//     index = i;
+//   }
+// }
+// console.log("index: " + JSON.stringify(friends[index]))
+// console.log(value, index)
+function sum(numbers) {
+    return numbers.reduce(function(a,b) {
+      return a + b
+      
+    });
+  }
 
 
 
