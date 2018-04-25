@@ -4,6 +4,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 require("./app/routing/htmlRoutes.js");
+var alert;
 
 // Sets up the Express App
 // =============================================================
@@ -55,26 +56,6 @@ app.post("/api/new", function(req, res) {
 
 
   });
-
-
-
-// app.get("/api/:friends?", function(req, res) {
-//     var chosen = req.params.characters;
-
-//     if (chosen) {
-//       console.log(chosen);
-
-//       for (var i = 0; i < characters.length; i++) {
-//         if (chosen === characters[i].routeName) {
-//           return res.json(characters[i]);
-//         }
-//       }
-
-//       return res.json(false);
-//     }
-//     return res.json(characters);
-//   });
-
 
 var newAr = [];
 var addedAr = []
@@ -138,7 +119,7 @@ for (var i = 1; i <  addedAr.length - 1; i++) {
     index = i;
   }
 }
-console.log("index: " + JSON.stringify(friends[index]))
+console.log(JSON.stringify(friends[index]));
 };
 
 var min = Math.min.apply(Math, addedAr)
@@ -171,3 +152,4 @@ function sum(numbers) {
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
+
