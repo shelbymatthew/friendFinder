@@ -1,34 +1,21 @@
-// import { read } from "fs";
 
 var friends = require("../data/friends");
 var newResult;
-module.exports = function(app){
-app.post("/api/friends", function(req, res, res2) {
+module.exports = function (app) {
+    app.post("/api/friends", function (req, res, res2) {
 
-    var newFriend = req.body;
-  
-    console.log("new friend;" + newFriend);
-  
-    friends.push(newFriend);
-    
-    // res.json(newFriend);
-   
-    newFriend = newFriend.scores.map(Number)
-    
-    userCompare(newFriend, friends)
+        var newFriend = req.body;
+        friends.push(newFriend);
+        newFriend = newFriend.scores.map(Number)
 
-    
-    res.json(newResult);
+        userCompare(newFriend, friends)
 
+        res.json(newResult);
+    });
 
-    
-  });
-
-  app.get("/api/friends", function (req, res) {
-
-    return res.json(friends);
-});
-
+    app.get("/api/friends", function (req, res) {
+        return res.json(friends);
+    });
 }
 
 function userCompare(newInput, oldFriends) {
@@ -44,16 +31,12 @@ function userCompare(newInput, oldFriends) {
         for (var i = 0; i < user.length; i++) {
 
             newAr.push(Math.abs(user[i] - friendlist[i]));
-        } console.log("new array:" + newAr)
+        }
         var added = sum(newAr);
-        console.log(added)
         newAr = [];
         addedAr.push(added)
-        console.log("added array: " + addedAr)
     };
-    console.log(addedAr)
     var min = Math.min.apply(Math, addedAr)
-    console.log("min: " + min)
     var index = 0;
     var value = addedAr[0];
     for (var i = 0; i < addedAr.length - 1; i++) {
@@ -64,7 +47,6 @@ function userCompare(newInput, oldFriends) {
     }
     newResult = JSON.stringify(oldFriends[index])
     console.log(newResult)
-    // console.log(value, index)
     function sum(numbers) {
         return numbers.reduce(function (a, b) {
             return a + b
