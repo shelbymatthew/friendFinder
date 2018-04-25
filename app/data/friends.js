@@ -22,23 +22,25 @@ var friends = [
 ];
 
 //walks through the scoress answers ojects, runs them through the check scoress function
-for(var j = 0; j < friends.length; j++){
-    // console.log(friends[j].scores)
-    checkScores(newUser, friends[j].scores)
+function checkNewFriend() {
+    for (var j = 0; j < friends.length; j++) {
+        // console.log(friends[j].scores)
+        checkScores(newUser, friends[j].scores)
+    }
 }
 
 
 
 
 //compares two arrays, and gets the total number of differences between each number in the arrays, pushes the totals to a new array.
-function checkScores(scores, friendlist){
-for(var i = 0; i < scores.length; i++){
-    
-    newAr.push(Math.abs(scores[i] - friendlist[i]));    
-}console.log(newAr)
+function checkScores(scores, friendlist) {
+    for (var i = 0; i < scores.length; i++) {
+
+        newAr.push(Math.abs(scores[i] - friendlist[i]));
+    } console.log(newAr)
     var added = sum(newAr);
     console.log(added)
-    newAr = [];  
+    newAr = [];
     addedAr.push(added)
     // console.log(addedAr)
 };
@@ -50,17 +52,17 @@ console.log(min)
 
 var index = 0;
 var value = addedAr[0];
-for (var i = 1; i <  addedAr.length; i++) {
-  if ( addedAr[i] < value) {
-    value =  addedAr[i];
-    index = i;
-  }
+for (var i = 1; i < addedAr.length; i++) {
+    if (addedAr[i] < value) {
+        value = addedAr[i];
+        index = i;
+    }
 }
 console.log("index: " + JSON.stringify(friends[index]))
 // console.log(value, index)
 function sum(numbers) {
-    return numbers.reduce(function(a,b) {
-      return a + b
-      
+    return numbers.reduce(function (a, b) {
+        return a + b
+
     });
-  }
+}
