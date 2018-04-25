@@ -11,148 +11,204 @@
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    <title>Hello, world!</title>
+    <title>Friend Finder Survey</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Hello, world!</h1>
-        <input class="form-control" type="text" placeholder="Default input" id="name">
-        <input class="form-control" type="text" placeholder="Default input" id="photo">
+        <h1>Survey Questions</h1>
+        <h4>Name (required)</h4>
+        <input class="form-control" type="text" placeholder="Name" id="name" required>
+        <h4>Photo link (required)</h4>
+        <input class="form-control" type="text" placeholder="Photo Link" id="photo">
 
-        <h4>What is a thing?</h4>
-        <select class="form-control" id="q1">
-            <option value="1">1</option>
+        <h4>Do you enjoy spending time outdoors?</h4>
+        <select class="chosen select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q2">
-            <option value="1">1</option>
+        <h4>Do you enjoy reading?</h4>
+        <select class="chosen select" id="q2">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q3">
-            <option value="1">1</option>
+        <h4>Do you prefer a quiet night in?</h4>
+        <select class="chosen select" id="q3">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q4">
-            <option value="1">1</option>
+        <h4>Do you prefer a night out with lots of people?</h4>
+        <select class="chosen select" id="q4">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q5">
-            <option value="1">1</option>
+        <h4>Do you like attending concerts?</h4>
+        <select class="chosen select" id="q5">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q6">
-            <option value="1">1</option>
+        <h4>Are politics important to you?</h4>
+        <select class="chosen select" id="q6">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q7">
-            <option value="1">1</option>
+        <h4>Are you a social drinker?</h4>
+        <select class="chosen select" id="q7">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q8">
-            <option value="1">1</option>
+        <h4>Would you consider yourself spiritual?</h4>
+        <select class="chosen select" id="q8">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q9">
-            <option value="1">1</option>
+        <h4>Do you tend to enjoy spending time with small groups?</h4>
+        <select class="chosen select" id="q9">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
-        <select class="form-control" id="q10">
-            <option value="1">1</option>
+        <h4>Do you consider yourself a foodie?</h4>
+        <select class="chosen select" id="q10">
+            <option value=""></option>
+            <option value="1">1 (Strongly disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Strongly agree</option>
         </select>
+        <br>
         <br>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
+        <br>
+        <br>
     </div>
-      <!-- Modal -->
-  <!-- <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    
-          <!-- Modal content-->
-          <!-- <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h2 class="modal-title"><strong>Best Match</strong></h2>
+    <!-- Modal -->
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">
+                        <strong>Best Match</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" src="https://www.pexels.com/search/summer/" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <h2 id="match-name"></h2>
-              <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-    
         </div>
-      </div> -->
+        
+    </div>
+    <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/shelbymatthew/friendFinder">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
     <!-- Optional JavaScript -->
     <script type="text/javascript">
 
         // Question: What does this code do?
         $("#submit").on("click", function (event) {
             event.preventDefault();
-            var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val(),
 
-
-
-                ]
-            };
-            // Question: What does this code do??
-            $.post("/api/new", newFriend, function (data) {
-                    if (data){
-                    $("#match-name").text(data.name);
-                    $("#match-img").attr("src", data.photo);
-
-                    // Show the modal with the best match
-                    $("#results-modal").modal("toggle");
-                    }else console.log("miss")
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
                 });
+
+                $(".chosen-select").each(function () {
+
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+            if (validateForm()) {
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+
+
+
+                    ]
+                };
+                // Question: What does this code do??
+                $.post("/api/friends", newFriend, function (data) {
+                    data = JSON.parse(data);
+                    if (data) {
+                        $("#match-name").text(data.name);
+                        $("#match-img").attr("src", data.photo);
+
+
+                        // Show the modal with the best match
+                        $("#results-modal").modal("toggle");
+                    } else console.log("miss")
+                });
+            } else alert("Please fill out all forms before submitting!")
         });
+
     </script>
 
 
