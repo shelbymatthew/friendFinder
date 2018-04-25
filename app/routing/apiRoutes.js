@@ -23,7 +23,6 @@ function userCompare(newInput, oldFriends) {
     var addedAr = []
     //walks through the users answers ojects, runs them through the check users function
     for (var j = 0; j < oldFriends.length; j++) {
-        // console.log(oldFriends[j].user)
         checkUsers(newInput, oldFriends[j].scores)
     }
     //compares two arrays, and gets the total number of differences between each number in the arrays, pushes the totals to a new array.
@@ -46,11 +45,10 @@ function userCompare(newInput, oldFriends) {
         }
     }
     newResult = JSON.stringify(oldFriends[index])
-    console.log(newResult)
+
     function sum(numbers) {
         return numbers.reduce(function (a, b) {
             return a + b
-
         });
     }
-}
+};
